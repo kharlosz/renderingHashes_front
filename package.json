@@ -1,0 +1,14 @@
+{
+    "name": "vue-etalab-poc",
+    "version": "1.0.0",
+    "description": "A simple way of rendering hashes with login accounts",
+    "main": "index.html",
+    "scripts": {
+      "start": "serve -n"
+    },
+    "keywords": [],
+    "license": "MIT",
+    "devDependencies": {
+      "serve": "^11.2.0"
+    }
+  }
