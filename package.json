@@ -5,7 +5,8 @@
     "main": "index.html",
     "scripts": {
         "build": "webpack --config webpack.config.js",
-        "start": "serve ./dist -n -p 8080"
+        "start": "serve ./dist -n -p 8080",
+        "launch" : "webpack --config webpack.config.js && serve ./dist -n -p 8080"
     },
     "keywords": [],
     "license": "MIT",

@@ -5,9 +5,9 @@ import axios from 'axios';
 var app = new Vue({
   el: '#app',
   data: {
+    suggestion: 'Générez vos propres hashs',
     presentation: 'Chaîne de caractères aléatoire :',
     presentation2: 'Hash associé (SHA256) :',
-    suggestion: 'Générez vos propres hashs',
     message: 'Connectez-vous pour gérer votre profil.',
     hash: '',
   },

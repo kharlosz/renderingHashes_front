@@ -19,7 +19,7 @@
 
 <body>
 
-    <div id="app">
+    <div id="register">
         <header role="banner" class="fr-header">
             <div class="fr-header__body">
                 <div class="fr-container">
@@ -86,28 +86,36 @@
                 </div>
                 <div class="fr-col-10">
 
-                    <div class="fr-my-2w"></div>
-
                     <div class="fr-container">
                         <div class="fr-grid-row">
                             <div class="fr-col-12">
-                                <h3 class="fr-my-5w">{{ presentation }}</h3>
-                                <div>{{ hash.random_string }}</div>
-                                <h3 class="fr-my-5w">{{ presentation2 }}</h3>
-                                <div class="breaking_text">{{ hash.random_hash }}</div>
-                                <div class="fr-my-10w"></div>
-                                <hr />
-                                {{ message }}
+
+                    <div class="fr-my-2w"></div>
+                    <h3>{{ presentation }}</h3>
+                    <div class="fr-my-5w"></div>
+                    <div class="register">
+                        <label class="fr-label" for="text-input-text">Identifiant</label>
+                        <input class="fr-input" type="text" id="text-input-text" name="text-input-text"
+                            v-model="username">
+                        <div class="fr-my-5w"></div>
+                        <label class="fr-label" for="text-input-text">Mot de passe</label>
+                        <input class="fr-input" type="password" id="text-input-text" name="text-input-text"
+                            v-model="password">
+                        <div class="fr-my-5w"></div>
+                        <button v-on:click="register" class="fr-btn fr-btn--secondary">
+                            Inscription
+                        </button>
+                    </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
-    <script src="./index.bundle.js"></script>
+    <script src="./register.bundle.js"></script>
     <!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
     <script type="module" src="./js/dsfr.module.js"></script>
     <script type="text/javascript" nomodule src="./js/dsfr.nomodule.js"></script>
