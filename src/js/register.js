@@ -18,8 +18,12 @@ var register = new Vue({
             username: this.username,
             password: this.password
           })
-          .then(response => {this.token = response.data.token; console.log(this.token)})
+          .then(response => {
+            localStorage.token = response.data.token
+            window.location.href = '/profile'
+          })
           .catch(function (error) {
+            window.location.href = '/register'
             // this.token = "Erreur ! Impossible d'accéder à l'API." + error
           })
          }

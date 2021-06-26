@@ -28,7 +28,9 @@ module.exports = {
         index: './src/js/index.js',
         hashgen: './src/js/hashgen.js',
         register: './src/js/register.js',
-         login: './src/js/login.js',
+        login: './src/js/login.js',
+        logout: './src/js/logout.js',
+        profile: './src/js/profile.js',
         style: './src/js/style.js'
     },
     output: {
