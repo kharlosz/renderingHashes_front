@@ -1,0 +1,16 @@
+#activecheckbox {
+    display: contents;
+}
+
+#inactivecheckbox, #checkedstate {
+    display: none;
+}
+
+@media (max-width:700px){
+h3 {
+        font-size: medium;
+}
+.breaking_text {
+    word-wrap: break-word;
+}
+}

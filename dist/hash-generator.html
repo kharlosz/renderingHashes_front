@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fr" data-fr-theme>
+
+<head>
+    <title>Génération de hashs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="css/dsfr.min.css"> -->
+    <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicons/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+    <link rel="manifest" href="favicons/manifest.webmanifest" crossorigin="use-credentials">
+    <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
+    <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+
+
+    <script src="./style.bundle.js"></script>
+</head>
+
+<body>
+
+    <div id="hash-gen">
+        <header role="banner" class="fr-header">
+            <div class="fr-header__body">
+                <div class="fr-container">
+                    <div class="fr-header__body-row">
+                        <div class="fr-header__brand fr-enlarge-link">
+                            <div class="fr-header__brand-top">
+                                <div class="fr-header__logo">
+                                    <p class="fr-logo">
+                                        République
+                                        <br>Française
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="fr-header__service">
+                                <a href="/" title="Accueil">
+                                    <p class="fr-header__service-title">Génération de hashs</p>
+                                </a>
+                                <p class="fr-header__service-tagline">POC</p>
+                            </div>
+                        </div>
+                        <div class="fr-header__tools">
+                            <div class="fr-header__tools-links">
+                                <ul class="fr-links-group">
+                                    <li>
+                                        <a class="fr-link fr-fi-lock-line" href="#">Se connecter</a>
+                                    </li>
+                                    <li>
+                                        <a class="fr-link fr-fi-account-line" href="#">S’enregistrer</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fr-header__menu-links" style="display: none;"></div>
+        </header>
+
+        <div class="fr-my-5w"></div>
+
+        <div class="fr-container fr-container--fluid">
+            <div class="fr-grid-row">
+                <div class="fr-col-10">
+
+                    <div class="fr-my-2w"></div>
+
+                    <div class="fr-container">
+                        <div class="fr-grid-row">
+                            <div class="fr-col-12">
+
+                                <h3 class="fr-my-5w">{{ suggestion }}</h3>
+
+                                <label class="fr-label" for="text-input-text">Saisissez le texte à hasher :</label>
+
+                                <div class="fr-my-2w"></div>
+
+                                <input type="text" id="text-input-text" name="text-input-text" v-model="txttohash"
+                                    class="fr-input">
+
+                                <div class="fr-my-7w"></div>
+
+                                <div class="fr-form-group" id="activecheckbox">
+                                    <fieldset class="fr-fieldset">
+                                        <legend class="fr-fieldset__legend fr-text--regular" id='radio-legend'>
+                                            Choisissez l'algorithme de hashage :
+                                        </legend>
+                                        <div class="fr-fieldset__content fr-grid-row">
+                                            <div class="fr-my-5w"></div>
+                                            <div class="fr-radio-group fr-col-4" style="display:inline;">
+                                                <input type="radio" id="radio-1" name="radio" v-model="picked"
+                                                    value="md5">
+                                                <label class="fr-label" for="radio-1">
+                                                    MD5
+                                                </label>
+                                            </div>
+                                            <div class="fr-col-6" style="display:inline;">
+                                                <span class="breaking_text">
+                                                    {{ hash.md5 }}
+                                                </span>
+                                            </div>
+                                            <div class="fr-my-5w"></div>
+                                            <div class="fr-radio-group fr-col-4">
+                                                <input type="radio" id="radio-2" name="radio" v-model="picked"
+                                                    value="sha1">
+                                                <label class="fr-label" for="radio-2">
+                                                    SHA1
+                                                </label>
+                                            </div>
+                                            <div class="fr-col-6" style="display:inline;">
+                                                <span class="breaking_text">
+                                                    {{ hash.sha1 }}
+                                                </span>
+                                            </div>
+                                            <div class="fr-my-5w"></div>
+                                            <div class="fr-radio-group fr-col-4">
+                                                <input type="radio" id="radio-3" name="radio" v-model="picked"
+                                                    value="sha256">
+                                                <label class="fr-label" for="radio-3">
+                                                    SHA256
+                                                </label>
+                                            </div>
+                                            <div class="fr-col-6" style="display:inline;">
+                                                <span class="breaking_text">
+                                                    {{ hash.sha256 }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <div class="fr-form-group" id="inactivecheckbox">
+                                    <fieldset class="fr-fieldset" disabled="disabled">
+                                        <legend class="fr-fieldset__legend fr-text--regular" id='radio-disabled-legend'>
+                                            Choisissez l'algorithme de hashage :
+                                        </legend>
+                                        <div class="fr-fieldset__content fr-grid-row">
+                                            <div class="fr-my-5w"></div>
+                                            <div class="fr-radio-group fr-col-4" style="display:inline;">
+                                                <input type="radio" id="radio-disabled-1" name="radio-disabled"
+                                                    value="md5">
+                                                <label class="fr-label" for="radio-disabled-1">
+                                                    MD5
+                                                </label>
+                                            </div>
+                                            <div class="fr-col-6" style="display:inline;">
+                                                <span class="breaking_text">
+                                                    {{ hash.md5 }}
+                                                </span>
+                                            </div>
+                                            <div class="fr-my-5w"></div>
+                                            <div class="fr-radio-group fr-col-4">
+                                                <input type="radio" id="radio-disabled-2" name="radio-disabled"
+                                                    value="sha1">
+                                                <label class="fr-label" for="radio-disabled-2">
+                                                    SHA1
+                                                </label>
+                                            </div>
+                                            <div class="fr-col-6" style="display:inline;">
+                                                <span class="breaking_text">
+                                                    {{ hash.sha1 }}
+                                                </span>
+                                            </div>
+                                            <div class="fr-my-5w"></div>
+                                            <div class="fr-radio-group fr-col-4">
+                                                <input type="radio" id="radio-disabled-3" name="radio-disabled"
+                                                    value="sha256">
+                                                <label class="fr-label" for="radio-disabled-3">
+                                                    SHA256
+                                                </label>
+                                            </div>
+                                            <div class="fr-col-6" style="display:inline;">
+                                                <span class="breaking_text">
+                                                    {{ hash.sha256 }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <div class="fr-my-3w"></div>
+
+                                <div class="fr-checkbox-group">
+                                    <input type="checkbox" id="checkbox" name="checkbox" v-model="checked"
+                                        true-value="oui" false-value="non">
+                                    <label class="fr-label" for="checkbox">
+                                        Les trois algorithmes à la fois
+                                    </label>
+                                </div>
+
+                                <div class="fr-my-10w"></div>
+
+                                <hr />
+                                {{ message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="checkedstate">{{ checkedstate }}</div>
+
+    </div>
+
+    <script src="./hashgen.bundle.js"></script>
+    <!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+    <script type="module" src="./js/dsfr.module.js"></script>
+    <script type="text/javascript" nomodule src="./js/dsfr.nomodule.js"></script>
+</body>
+
+</html>

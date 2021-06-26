@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr" data-fr-theme>
+
+<head>
+    <title>Génération de hashs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="css/dsfr.min.css"> -->
+    <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicons/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+    <link rel="manifest" href="favicons/manifest.webmanifest" crossorigin="use-credentials">
+    <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
+    <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+
+
+    <script src="./style.bundle.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <header role="banner" class="fr-header">
+            <div class="fr-header__body">
+                <div class="fr-container">
+                    <div class="fr-header__body-row">
+                        <div class="fr-header__brand fr-enlarge-link">
+                            <div class="fr-header__brand-top">
+                                <div class="fr-header__logo">
+                                    <p class="fr-logo">
+                                        République
+                                        <br>Française
+                                    </p>
+                                </div>
+                                <!-- <div class="fr-header__navbar"> -->
+                                <!-- <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-833" aria-haspopup="menu" title="Menu" id="fr-btn-menu-mobile">
+                                    Menu
+                                </button> -->
+                                <!-- </div> -->
+                            </div>
+                            <div class="fr-header__service">
+                                <a href="/" title="Accueil">
+                                    <p class="fr-header__service-title">Génération de hashs</p>
+                                </a>
+                                <p class="fr-header__service-tagline">POC</p>
+                            </div>
+                        </div>
+                        <div class="fr-header__tools">
+                            <div class="fr-header__tools-links">
+                                <ul class="fr-links-group">
+                                    <li>
+                                        <a class="fr-link fr-fi-lock-line" href="#">Se connecter</a>
+                                    </li>
+                                    <li>
+                                        <a class="fr-link fr-fi-account-line" href="#">S’enregistrer</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fr-header__menu-links" style="display: none;"></div>
+        </header>
+
+        <div class="fr-my-5w"></div>
+
+        <div class="fr-container fr-container--fluid">
+            <div class="fr-grid-row">
+                <div class="fr-col-12 fr-col-sm-8 fr-col-md-6 fr-col-lg-4 fr-col-xl-2">
+                    <nav class="fr-sidemenu" aria-label="Menu latéral">
+                        <div class="fr-sidemenu__inner">
+                            <button class="fr-sidemenu__btn" hidden aria-controls="fr-sidemenu-wrapper"
+                                aria-expanded="false">Plus</button>
+                            <div class="fr-collapse" id="fr-sidemenu-wrapper">
+                                <!-- <div class="fr-sidemenu__title">Plus</div> -->
+                                <ul class="fr-sidemenu__list">
+                                    <li class="fr-sidemenu__item fr-sidemenu__item--active">
+                                        <a class="fr-sidemenu__link" href="hash-generator" target="_self"
+                                            aria-current="page">{{ suggestion }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="fr-col-10">
+
+                    <div class="fr-my-2w"></div>
+
+                    <div class="fr-container">
+                        <div class="fr-grid-row">
+                            <div class="fr-col-12">
+                                <h3 class="fr-my-5w">{{ presentation }}</h3>
+                                <div>{{ hash.random_string }}</div>
+                                <h3 class="fr-my-5w">{{ presentation2 }}</h3>
+                                <div class="breaking_text">{{ hash.random_hash }}</div>
+                                <div class="fr-my-10w"></div>
+                                <hr />
+                                {{ message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./index.bundle.js"></script>
+    <!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+    <script type="module" src="./js/dsfr.module.js"></script>
+    <script type="text/javascript" nomodule src="./js/dsfr.nomodule.js"></script>
+</body>
+
+</html>

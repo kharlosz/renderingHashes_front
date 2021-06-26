@@ -4,11 +4,23 @@
     "description": "A simple way of rendering hashes with login accounts",
     "main": "index.html",
     "scripts": {
-      "start": "serve -n"
+        "build": "webpack --config webpack.config.js",
+        "start": "serve ./dist -n -p 8080"
     },
     "keywords": [],
     "license": "MIT",
     "devDependencies": {
-      "serve": "^11.2.0"
+        "serve": "^11.2.0",
+        "webpack": "^5.40.0",
+        "webpack-cli": "^4.7.2"
+    },
+    "dependencies": {
+        "@gouvfr/dsfr": "^1.0.0-rc1.0",
+        "axios": "^0.21.1",
+        "css-loader": "^5.2.6",
+        "lodash": "^4.17.21",
+        "style-loader": "^2.0.0",
+        "url-loader": "^4.1.1",
+        "vue": "^2.6.14"
     }
-  }
+}
