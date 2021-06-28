@@ -14,7 +14,7 @@ var login = new Vue({
             window.location.href = '/login'
         }
         axios
-            .get('http://127.0.0.1:5000/api/me', { 'headers': { 'Authorization': "token " + localStorage.token }})
+            .get('http://127.0.0.1:5000/api/me', { 'headers': { 'Authorization': "token " + localStorage.token } })
             .then(response => {
                 if (response.status !== 200) {
                     window.location.href = '/login'
@@ -24,7 +24,6 @@ var login = new Vue({
             })
             .catch(function (error) {
                 window.location.href = '/login'
-                // this.token = "Erreur ! Impossible d'accéder à l'API." + error
             })
     }
 })
