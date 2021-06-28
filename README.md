@@ -16,3 +16,5 @@ In order to install and launch the VueJS app :
 npm i
 npm run launch
 ```
+
+Then you should see the Home page at ``` http://localhost:8080/ ```
